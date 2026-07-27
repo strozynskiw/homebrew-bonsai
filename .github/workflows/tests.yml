@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-13
+          - macos-14
+          - ubuntu-24.04
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Audit formula
+        run: brew audit --strict --formula Formula/bonsai.rb
+      - name: Install formula
+        run: brew install --formula ./Formula/bonsai.rb
+      - name: Test formula
+        run: brew test ./Formula/bonsai.rb
