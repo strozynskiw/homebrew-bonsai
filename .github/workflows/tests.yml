@@ -16,18 +16,20 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-13
+          - macos-15-intel
           - macos-14
           - ubuntu-24.04
     runs-on: ${{ matrix.os }}
     steps:
       - name: Check out tap
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c
+      - name: Register tap
+        run: brew tap --custom-remote strozynskiw/bonsai "$GITHUB_WORKSPACE"
       - name: Audit formula
-        run: brew audit --strict --formula Formula/bonsai.rb
+        run: brew audit --strict strozynskiw/bonsai/bonsai
       - name: Install formula
-        run: brew install --formula ./Formula/bonsai.rb
+        run: brew install strozynskiw/bonsai/bonsai
       - name: Test formula
-        run: brew test ./Formula/bonsai.rb
+        run: brew test strozynskiw/bonsai/bonsai
