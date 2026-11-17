@@ -5,21 +5,21 @@ class Bonsai < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/strozynskiw/bonsai/releases/download/v0.2.8/bonsai-v0.2.8-aarch64-apple-darwin.tar.gz"
-      sha256 "df2701f0d802e5f3fea07849e6f136850f3255f0a696e1fb1d651ec798cd134b"
+      url "https://github.com/strozynskiw/bonsai/releases/download/v0.6.0/bonsai-v0.6.0-aarch64-apple-darwin.tar.gz"
+      sha256 "80eea0aafd0c587af22b350d98e11d8dce5758ffc10e59ae7856a22d7775de27"
     else
-      url "https://github.com/strozynskiw/bonsai/releases/download/v0.2.8/bonsai-v0.2.8-x86_64-apple-darwin.tar.gz"
-      sha256 "d01ef2c1c16972540b24c5f7f50d6cc37742e7e87185b9a8ca5ca91ba8e81d94"
+      url "https://github.com/strozynskiw/bonsai/releases/download/v0.6.0/bonsai-v0.6.0-x86_64-apple-darwin.tar.gz"
+      sha256 "dea97a6af4d09c18690fc124b7fed28f82084b6f1daaca13f1660b3ff400819a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/strozynskiw/bonsai/releases/download/v0.2.8/bonsai-v0.2.8-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "813629272f85380c635b762ab93c913a69e1755e831c22d9450becc3dd2471ac"
+      url "https://github.com/strozynskiw/bonsai/releases/download/v0.6.0/bonsai-v0.6.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "fcd02bdd7d270c614e285410eb3657e45c19fc794017ac4fff3ed798b386d7d9"
     else
-      url "https://github.com/strozynskiw/bonsai/releases/download/v0.2.8/bonsai-v0.2.8-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "43d9f06ec9fab29e0f3a9e5ee368cf61b2502cf4aa973626ba216607671a221c"
+      url "https://github.com/strozynskiw/bonsai/releases/download/v0.6.0/bonsai-v0.6.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "b2156877b0ec3d7b37437b4812418da3d70fe8bcde13a9c06bdd12509c183f4a"
     end
   end
 
